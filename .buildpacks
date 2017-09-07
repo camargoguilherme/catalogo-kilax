@@ -1,2 +1,3 @@
-https://github.com/ddollar/heroku-buildpack-nodejs
-https://github.com/ddollar/heroku-buildpack-php
+https://github.com/heroku/heroku-buildpack-nodejs
+https://github.com/heroku/heroku-buildpack-php
+
