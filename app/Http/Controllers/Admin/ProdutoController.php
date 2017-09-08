@@ -57,19 +57,19 @@ class ProdutoController extends Controller
             $dados['imagem'] = $imagem;
         }
         */
-        Produto::find($codbarra)->update($dados);
+        Produto::table('produtos') ->where('codbarra', $codbarra)->update($dados);
         return redirect()->route('admin.produtos');
     }
 
     public function editar($codbarra){
 
-        $registro = Produto::find($codbarra);
+        $registro = Produto::table('produtos') ->where('codbarra', $codbarra);
 
         return view ('admin.produtos.editar', compact('registro'));
     }
 
     public function deletar($codbarra){
-        Produto::find($codbarra)->delete();
+        Produto::table('produtos') ->where('codbarra', $codbarra)->delete();
         return redirect()->route('admin.produtos');
     }
 

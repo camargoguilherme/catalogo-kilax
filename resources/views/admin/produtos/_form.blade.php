@@ -34,7 +34,7 @@
 </div>
 
 <div class="input-field">
-    <input type="number" name="valor" value="{{ isset($registro->valor) ? $registro->valor : '' }}" >
+    <input type="text" name="valor" value="{{ isset($registro->valor) ? $registro->valor : '' }}" >
     <label>Valor</label>
 </div>
 
