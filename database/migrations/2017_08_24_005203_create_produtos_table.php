@@ -16,13 +16,13 @@ class CreateProdutosTable extends Migration
         Schema::create('produtos', function (Blueprint $table) {
 
             $table->string('id');
-            $table->string('descricao')->nullable;
-            $table->string('ean')->nullable;
-            $table->string('material')->nullable;
-            $table->string('medidas')->nullable;
-            $table->string('origem')->nullable;
-            $table->string('peso')->nullable;
-            $table->string('precaucao')->nullable;
+            $table->string('descricao')->nullable();
+            $table->string('ean')->nullable();
+            $table->string('material')->nullable();
+            $table->string('medidas')->nullable();
+            $table->string('origem')->nullable();
+            $table->string('peso')->nullable();
+            $table->string('precaucao')->nullable();
             $table->decimal('valor', 5,2)->default(0.00);
             $table->enum('publicado',['sim', 'nao'])->default('nao');
             $table->timestamps();
