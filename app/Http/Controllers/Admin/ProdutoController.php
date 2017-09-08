@@ -63,7 +63,7 @@ class ProdutoController extends Controller
 
     public function editar($codbarra){
 
-        $registro = Produto::where('codbarra', $codbarra);
+        $registro = Produto::where('codbarra', $codbarra)->get();
 
         return view ('admin.produtos.editar', compact('registro'));
     }
