@@ -4,7 +4,7 @@
 </div>
 
 <div class="input-field">
-    <input type="text" name="id" value="{{ isset($registro->id) ? $registro->id : '' }}">
+    <input type="text" name="codbarra" value="{{ isset($registro->codbarra) ? $registro->codbarra : '' }}">
     <label>Codigo de Barras</label>
 </div>
 

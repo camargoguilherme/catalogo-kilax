@@ -6,7 +6,7 @@
     <div class="container">
         <h3 class="center">Editando Produto</h3>
         <div class="row">
-            <form class="" action="{{ route('admin.produtos.atualizar', $registro->id) }}" method="post" enctype="multipart/form-data">
+            <form class="" action="{{ route('admin.produtos.atualizar', $registro->codbarra) }}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="put">
 

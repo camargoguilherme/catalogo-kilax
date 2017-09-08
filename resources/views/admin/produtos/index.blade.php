@@ -21,7 +21,7 @@
                 <tbody>
                     @foreach($registros as $registro)
                         <tr>
-                            <td>{{ $registro->id }}</td>
+                            <td>{{ $registro->codbarra }}</td>
                             <td>{{ $registro->descricao }}</td>
                             <td>{{ $registro->valor }}</td>
                             <td>{{ $registro->publicado }}</td>
@@ -37,7 +37,7 @@
                                         <p class="blue">Deseja excluir?</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="{{route('admin.produtos.deletar', $registro->id)}}" class=" modal-action modal-close waves-effect waves-green btn-flat">Deletar</a>
+                                        <a href="{{route('admin.produtos.deletar', $registro->codbarra)}}" class=" modal-action modal-close waves-effect waves-green btn-flat">Deletar</a>
                                     </div>
                                 </div>
                                 <script>
