@@ -17,7 +17,7 @@ class CreateProdutosTable extends Migration
 
             $table->string('id');
             $table->string('descricao')->nullable();
-            $table->string('ean')->nullable();
+            $table->string('codbarra')->nullable();
             $table->string('material')->nullable();
             $table->string('medidas')->nullable();
             $table->string('origem')->nullable();
