@@ -34,7 +34,7 @@
                                 <div id="modal1" class="modal">
                                     <div class="modal-content">
                                         <h4>{{ $registro->descricao.' - '.$registro->material }}</h4>
-                                        <p class="blue">Deseja excluir?</p>
+                                        <p class="waves-effect waves-light">Deseja excluir?</p>
                                     </div>
                                     <div class="modal-footer">
                                         <a href="{{route('admin.produtos.deletar', $registro->id)}}" class=" modal-action modal-close waves-effect waves-green btn-flat">Deletar</a>
