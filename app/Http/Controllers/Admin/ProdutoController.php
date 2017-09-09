@@ -46,7 +46,7 @@ class ProdutoController extends Controller
             $dados['publicado'] = 'nao';
         }
 
-        /*
+
         if ($req->hasFile('imagem')){
             $imagem = $req->file('imagem');
             $num = rand(1111, 9999);
@@ -56,7 +56,7 @@ class ProdutoController extends Controller
             $imagem->move($dir, $nomeImagem);
             $dados['imagem'] = $imagem;
         }
-        */
+        
         Produto::where('codbarra', $codbarra)->update($dados);
         return redirect()->route('admin.produtos');
     }
