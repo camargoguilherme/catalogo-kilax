@@ -8,7 +8,7 @@
         <div class="row">
             @foreach($produtos as $produto)
                 @if($produto->publicado == 'sim')
-                    <div class="col s12 m4">
+                    <div class="col s8 m3">
                         <div class="card">
                             <div class="card-image">
                                 <img height="100" src="{{asset($produto->imagem)}}">
