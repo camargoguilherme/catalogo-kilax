@@ -50,13 +50,12 @@ class ProdutoController extends Controller
         if ($req->hasFile('imagem')){
             $imagem = $req->file('imagem');
             $num = rand(1111, 9999);
-            $dir = "img/cursos/";
+            $dir = "img/produtos/";
             $ex = $imagem->guessClientExtension();
             $nomeImagem = "imagem_".$num.".".$ex;
             $imagem->move($dir, $nomeImagem);
             $dados['imagem'] = $imagem;
         }
-
         Produto::find($id)->update($dados);
         return redirect()->route('admin.produtos');
     }
