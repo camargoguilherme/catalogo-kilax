@@ -28,7 +28,7 @@
                         <td><img height="60" src=" {{ $registro->imagem }}" alt="{{ $registro->descricao }}"></td>
                             <th></th>
                             <td>
-                                <a class="waves-effect waves-light btn deep-orange"  data-target="#editModal" data-toggle="modal" href="{{ route('admin.produtos.editar', $registro->codbarra) }}">Editar</a>
+                                <a class="waves-effect waves-light btn deep-orange"  data-target="#editModal" data-toggle="modal" href="{{ route('admin.produtos.editar', $registro->id) }}">Editar</a>
                                 <a class="waves-effect waves-light btn red view" onclick="$('#modal1').modal('open');">Deletar</a>
                                 <!-- Modal Structure -->
                                 <div id="modal1" class="modal">
@@ -37,7 +37,7 @@
                                         <p class="blue">Deseja excluir?</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="{{route('admin.produtos.deletar', $registro->codbarra)}}" class=" modal-action modal-close waves-effect waves-green btn-flat">Deletar</a>
+                                        <a href="{{route('admin.produtos.deletar', $registro->id)}}" class=" modal-action modal-close waves-effect waves-green btn-flat">Deletar</a>
                                     </div>
                                 </div>
                                 <script>

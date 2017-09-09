@@ -61,15 +61,15 @@ class ProdutoController extends Controller
         return redirect()->route('admin.produtos');
     }
 
-    public function editar($codbarra){
+    public function editar($id){
 
-        $registro = Produto::find('codbarra', $codbarra);
+        $registro = Produto::find($id);
 
         return view ('admin.produtos.editar', compact('registro'));
     }
 
-    public function deletar($codbarra){
-        Produto::where('codbarra', $codbarra)->delete();
+    public function deletar($id){
+        Produto::find($id)->delete();
         return redirect()->route('admin.produtos');
     }
 
