@@ -23,7 +23,7 @@ class CreateProdutosTable extends Migration
             $table->string('origem')->nullable();
             $table->string('peso')->nullable();
             $table->string('precaucao')->nullable();
-            $table->string('imagem')->nullable();
+            $table->string('imagem');
             $table->decimal('valor', 5,2)->default(0.00);
             $table->enum('publicado',['sim', 'nao'])->default('nao');
             $table->timestamps();
