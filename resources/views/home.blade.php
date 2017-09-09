@@ -18,7 +18,7 @@
                         <p>{{$produto->descricao}}</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">Ver mais...</a>
+                        <a href="{{ route('site.detalhes', $produto->id) }}">Ver mais...</a>
                     </div>
                 </div>
             </div>
