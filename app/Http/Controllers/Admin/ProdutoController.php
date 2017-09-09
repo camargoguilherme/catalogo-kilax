@@ -36,7 +36,7 @@ class ProdutoController extends Controller
         return redirect()->route('admin.produtos');
     }
 
-    public function atualizar(Request $req, $codbarra){
+    public function atualizar(Request $req, $id){
 
         $dados = $req->all();
 
@@ -57,13 +57,13 @@ class ProdutoController extends Controller
             $dados['imagem'] = $imagem;
         }
 
-        Produto::where('codbarra', $codbarra)->update($dados);
+        Produto::find($id)->update($dados);
         return redirect()->route('admin.produtos');
     }
 
     public function editar($codbarra){
 
-        $registro = Produto::where('codbarra', $codbarra)->get();
+        $registro = Produto::find('codbarra', $codbarra);
 
         return view ('admin.produtos.editar', compact('registro'));
     }
