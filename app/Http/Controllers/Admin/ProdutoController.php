@@ -56,6 +56,7 @@ class ProdutoController extends Controller
             $imagem->move($dir, $nomeImagem);
             $dados['imagem'] = $imagem;
         }
+        dd($imagem);
         Produto::find($id)->update($dados);
         return redirect()->route('admin.produtos');
     }
