@@ -25,7 +25,7 @@
     <body>
         <header>
             <nav>
-                <div class="nav-wrapper deep-orange" >
+                <div class="nav-wrapper green" >
                     <a href="#!" class="brand-logo">Catálogo Kilax Japan</a>
                     <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
