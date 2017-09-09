@@ -26,7 +26,7 @@ Route::post('/contato', ['uses'=>'ContatoController@criar']);
 Route::put('/contato', ['uses'=>'ContatoController@editar']);
 
 //Rotas para acesso a Produto
-Route::get('/site/{id?}', ['as'=>'site.detalhes', 'uses'=>'Site\HomeController@produto']);
+Route::get('/detalhes/{id?}', ['as'=>'detalhes.produto', 'uses'=>'Site\HomeController@produto']);
 
 //Protege rotas contra acessos nao autorizados
 Route::group(['middleware'=>'auth'], function(){
