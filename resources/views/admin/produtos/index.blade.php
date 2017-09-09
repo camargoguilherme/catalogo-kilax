@@ -25,7 +25,7 @@
                             <td>{{ $registro->descricao }}</td>
                             <td>{{ $registro->valor }}</td>
                             <td>{{ $registro->publicado }}</td>
-                        <!--td><img height="60" src=" " alt="{{ $registro->descricao }}"></td-->
+                        <td><img height="60" src=" {{ $registro->imagem }}" alt="{{ $registro->descricao }}"></td>
                             <th></th>
                             <td>
                                 <a class="waves-effect waves-light btn deep-orange"  data-target="#editModal" data-toggle="modal" href="{{ route('admin.produtos.editar', $registro->codbarra) }}">Editar</a>
