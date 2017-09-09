@@ -1,10 +1,10 @@
 @extends('layout.site')
 
-@section('titulo', 'Cursos')
+@section('titulo', 'Produto')
 
 @section('conteudo')
     <div class="container">
-        <h3 class="center">Editando Produto</h3>
+        <h3 class="center">Editando {{ $registro->descricao }}</h3>
         <div class="row">
             <form class="" action="{{ route('admin.produtos.atualizar', $registro->id) }}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}

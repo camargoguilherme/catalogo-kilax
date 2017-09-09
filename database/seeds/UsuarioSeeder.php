@@ -14,8 +14,17 @@ class UsuarioSeeder extends Seeder
     {
         $dados = [
             'name'=>'Guilherme',
-            'email'=>'admin@mail.com',
-            'password'=>bcrypt("123456")
+            'email'=>'guilherme.camargo@kilax.com.br',
+            'password'=>bcrypt("guilhermecamargo"),
+            'name'=>'Cinthia Ono',
+            'email'=>'cinthia.ono@kilax.com.br',
+            'password'=>bcrypt("cinthiaono"),
+            'name'=>'Roberto Sonoda',
+            'email'=>'roberto.sonoda@kilax.com.br',
+            'password'=>bcrypt("robertosonoda"),
+            'name'=>'Regina Sonoda',
+            'email'=>'regina.sonoda@kilax.com.br',
+            'password'=>bcrypt("reginasonoda")
         ];
         if(User::where('email', '=', $dados['email'])->count()){
             $usuario = User::where('email', '=', $dados['email'])->first();
