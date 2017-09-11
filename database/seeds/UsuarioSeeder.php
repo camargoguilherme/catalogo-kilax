@@ -15,28 +15,28 @@ class UsuarioSeeder extends Seeder
         $dados = [
             'name'=>'Guilherme',
             'email'=>'guilherme.camargo@kilax.com.br',
-            'password'=>bcrypt("guilhermecamargo"),
+            'password'=>bcrypt("guilherme"),
 
         ];
 
         $dados2 = [
             'name'=>'Cinthia Ono',
             'email'=>'cinthia.ono@kilax.com.br',
-            'password'=>bcrypt("cinthiaono")
+            'password'=>bcrypt("cinthia")
 
         ];
 
         $dados3 = [
             'name'=>'Roberto Sonoda',
             'email'=>'roberto.sonoda@kilax.com.br',
-            'password'=>bcrypt("robertosonoda")
+            'password'=>bcrypt("roberto")
 
         ];
 
         $dados4 = [
             'name'=>'Regina Sonoda',
             'email'=>'regina.sonoda@kilax.com.br',
-            'password'=>bcrypt("reginasonoda")
+            'password'=>bcrypt("regina")
 
         ];
         if(User::where('email', '=', $dados['email'])->count()){

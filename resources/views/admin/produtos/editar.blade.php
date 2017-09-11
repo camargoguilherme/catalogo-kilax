@@ -13,7 +13,7 @@
                 @include('admin.produtos._form')
 
                 <button class="waves-effect waves-light btn deep-orange">Atualizar</button>
-                <button class="waves-effect waves-light btn red" href="{{route('admin.produtos')}}">Cancelar</button>
+                <button class="waves-effect waves-light btn red" href="{{ route('admin.produtos')}}">Cancelar</button>
             </form>
         </div>
     </div>
