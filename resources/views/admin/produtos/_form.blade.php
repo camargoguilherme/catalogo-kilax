@@ -28,16 +28,12 @@
     <label>Peso</label>
 </div>
 
-<div class="row">
-    <form class="col s12">
-        <div class="row">
-            <div class="input-field col s12">
+
+<div class="input-field">
     <textarea class="materialize-textarea" name="precaucao" value="{{ isset($registro->precaucao) ? $registro->precaucao : '' }}" ></textarea>
     <label for="precaucao">Precaucões</label>
-            </div>
-        </div>
-    </form>
 </div>
+
 
 <div class="input-field">
     <input type="text" name="valor" value="{{ isset($registro->valor) ? $registro->valor : '' }}" >

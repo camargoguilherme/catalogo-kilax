@@ -11,7 +11,7 @@
                     <div class="col s6 m2">
                         <div class="card">
                             <div class="card-image">
-                                <img height="100" src="{{asset($produto->imagem)}}">
+                                <img height="100" src="{{asset($produto->imagem)}}" alt="{{ $produto->descricao }}">
 
                             </div>
                             <div class="card-content">

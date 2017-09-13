@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Imagem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Produto;
@@ -20,8 +21,8 @@ class ProdutoController extends Controller
     }
 
     public function salvar(Request $req){
-
         $dados = $req->all();
+
 
         if($dados['descricao'] != null) {
             if (isset($dados['publicado'])) {
@@ -30,8 +31,17 @@ class ProdutoController extends Controller
                 $dados['publicado'] = 'nao';
             }
 
+            if ($req->hasFile('imagem')){
+                $imagem = $req->file('imagem');
+                $num = rand(1111, 9999);
+                $ex = $imagem->guessClientExtension();
+                $imagem['descricao'] = "imagem_".$num.".".$ex;
+                $imagem['imagem'] = ;
+                $imagem['codbarra_produto'] = $dados['codbarra'];
+            }
 
             Produto::create($dados);
+            Imagem::create();
         }
         return redirect()->route('admin.produtos');
     }
