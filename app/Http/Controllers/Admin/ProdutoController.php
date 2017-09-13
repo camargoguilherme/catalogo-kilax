@@ -36,7 +36,7 @@ class ProdutoController extends Controller
                 $num = rand(1111, 9999);
                 $ex = $imagem->guessClientExtension();
                 $imagem['descricao'] = "imagem_".$num.".".$ex;
-                $imagem['imagem'] = ;
+                $imagem['imagem'] = '';
                 $imagem['codbarra_produto'] = $dados['codbarra'];
             }
 
