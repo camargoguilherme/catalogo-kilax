@@ -16,8 +16,8 @@ class CreateProdutosTable extends Migration
         Schema::create('produtos', function (Blueprint $table) {
 
             $table->increments('id');
+            $table->string('codbarra')->unique();
             $table->string('descricao')->nullable();
-            $table->string('codbarra')->nullable();
             $table->string('material')->nullable();
             $table->string('medidas')->nullable();
             $table->string('origem')->nullable();
@@ -27,6 +27,7 @@ class CreateProdutosTable extends Migration
             $table->decimal('valor', 5,2)->default(0.00);
             $table->enum('publicado',['sim', 'nao'])->default('nao');
             $table->timestamps();
+
         });
     }
 

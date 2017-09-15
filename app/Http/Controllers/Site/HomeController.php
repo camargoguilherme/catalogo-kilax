@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Imagem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Produto;
@@ -10,7 +11,8 @@ class HomeController extends Controller
 {
     public function index(){
         $produtos = Produto::all();
-        return view('home', compact('produtos'));
+        $imagems = Imagem::all();
+        return view('home', compact('produtos'), compact('imagems'));
     }
     public function produto($id){
         $produto = Produto::find($id);

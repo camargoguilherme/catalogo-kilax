@@ -19,6 +19,7 @@ class ProdutoSeeder extends Seeder
             'medidas'=>'15x25x5',
             'peso'=>'15g',
             'valor'=>'10.99',
+            'publicado'=>'sim'
 
         ];
         if(Produto::where('codbarra', '=', $dados['codbarra'])->count()){
@@ -37,15 +38,16 @@ class ProdutoSeeder extends Seeder
             'medidas'=>'20',
             'peso'=>'80g',
             'valor'=>'8.99',
+            'publicado'=>'sim'
 
         ];
         if(Produto::where('codbarra', '=', $dados1['codbarra'])->count()){
             $produto1 = Produto::where('codbarra', '=', $dados1['codbarra'])->first();
             $produto1->update($dados1);
-            echo "Produto 1 Alterado!\n";
+            echo "Produto 2 Alterado!\n";
         }else{
             Produto::create($dados1);
-            echo "Produto 1 criado!\n";
+            echo "Produto 2 criado!\n";
         }
     }
 }

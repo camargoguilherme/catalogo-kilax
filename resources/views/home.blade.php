@@ -9,9 +9,16 @@
             @foreach($produtos as $produto)
                 @if($produto->publicado == 'sim')
                     <div class="col s6 m2">
+
                         <div class="card">
                             <div class="card-image">
-                                <img height="100" src="{{asset($produto->imagem)}}" alt="{{ $produto->descricao }}">
+                                @foreach($imagems as $imagem)
+
+                                    @if($imagem->id_produto == $produto->id && $imagem->capa == 'sim')
+                                        <img height="100" src="{{asset($imagem->imagem)}}" alt="{{ $produto->descricao }}">
+                                    @endif
+                                @endforeach
+
 
                             </div>
                             <div class="card-content">

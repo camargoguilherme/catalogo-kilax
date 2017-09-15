@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Imagem extends Model
 {
-    protected $fillable = ['id', 'descricao', 'codbarra_produto', 'imagem'];
+    protected $fillable = ['id', 'descricao', 'id_produto', 'imagem', 'capa'];
 
 }

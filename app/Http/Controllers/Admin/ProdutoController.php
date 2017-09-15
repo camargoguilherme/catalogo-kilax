@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Produto;
 
+// Constantes
+define('TAMANHO_MAXIMO', (5 * 1024 * 1024));
+
 class ProdutoController extends Controller
 {
     public function index(){
@@ -23,7 +26,6 @@ class ProdutoController extends Controller
     public function salvar(Request $req){
         $dados = $req->all();
 
-
         if($dados['descricao'] != null) {
             if (isset($dados['publicado'])) {
                 $dados['publicado'] = 'sim';
@@ -33,15 +35,23 @@ class ProdutoController extends Controller
 
             if ($req->hasFile('imagem')){
                 $imagem = $req->file('imagem');
-                $num = rand(1111, 9999);
+                $num = rand(1, 999999);
+                $dir = "img/produtos";
                 $ex = $imagem->guessClientExtension();
-                $imagem['descricao'] = "imagem_".$num.".".$ex;
-                $imagem['imagem'] = '';
-                $imagem['codbarra_produto'] = $dados['codbarra'];
+                $nomeImagem = "imagem_".$num.".".$ex;
+                $imagem->move($dir, $nomeImagem);
+                $foto['descricao'] = "imagem_".$num.".".$ex;
+                $foto['imagem'] = $dir . "/" . $nomeImagem;
+                $foto['capa'] = 'sim';
             }
 
+
             Produto::create($dados);
-            Imagem::create();
+            $produto = Produto::where('codbarra', '=', $dados['codbarra'])->first();
+            $foto['id_produto'] = $produto['id'];
+            Imagem::create($foto);
+
+
         }
         return redirect()->route('admin.produtos');
     }
@@ -59,7 +69,7 @@ class ProdutoController extends Controller
 
         if ($req->hasFile('imagem')){
             $imagem = $req->file('imagem');
-            $num = rand(1111, 9999);
+            $num = rand(1, 999999);
             $dir = "img/produtos";
             $ex = $imagem->guessClientExtension();
             $nomeImagem = "imagem_".$num.".".$ex;

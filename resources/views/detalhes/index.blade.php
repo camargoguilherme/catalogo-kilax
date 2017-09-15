@@ -3,37 +3,40 @@
 @section('titulo', $produto->descricao)
 
 @section('conteudo')
-    <br>
-    <div class="card-image col-lg-4">
-        <img height="250" src="{{asset($produto->imagem)}}">
-
-    </div>
-    <div class="container col-lg-8">
-
-        <div class="row row--component-margin">
-
-            <div class="col-xxs-8 right-col">
-                <div class="clp-component-render">
-
-                    <div class="text center-block">
-                        <div class="requirements__title">
-                            <h3>{{ $produto->descricao }}</h3>
-                        </div>
-                        <div class="text-center">
-                            <ul class="requirements__list">
-
-                                <li class="text-capitalize">{{ $produto->descricao }}</li>
-
-                            </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col s10 m10 l10" >
+                <div class="scrollspy section">
+                    <div class="carousel carousel-slider initialized">
+                        <div class="carousel carousel-slider">
+                            <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+                            <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+                            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+                            <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
                         </div>
                     </div>
-
                 </div>
             </div>
+            <div class="col s8 m2 l10">
+                <h4>Descrição</h4>
+                <p class="caption">{{ $produto->descricao }}</p>
+                <h4>Código de Barra</h4>
+                <p class="caption">{{ $produto->codbarra }}</p>
+                <h4>Material</h4>
+                <p class="caption">{{ $produto->material }}</p>
+                <h4>Medidas</h4>
+                <p class="caption">{{ $produto->medidas }}</p>
+                <h4>Origem</h4>
+                <p class="caption">{{ $produto->origem }}</p>
+                <h4>Peso</h4>
+                <p class="caption">{{ $produto->peso }}</p>
+                <h4>Precauções</h4>
+                <p class="caption">{{ $produto->precaucao }}</p>
+                <h4>Valor</h4>
+                <p class="caption">{{ $produto->valor }}</p>
+            </div>
         </div>
-
-        <h3 class="center" title="{{$produto->descricao}}"></h3>
-
     </div>
+
 @endsection
 

@@ -15,11 +15,10 @@ class CreateImagemsTable extends Migration
     {
         Schema::create('imagems', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('codbarra_produto')->
-            references('id')->
-            on('produto');
+            $table->integer('id_produto');
             $table->string('descricao');
-            $table->binary('imagem');
+            $table->string('imagem');
+            $table->enum('capa',['sim', 'nao'])->default('nao');
             $table->timestamps();
         });
     }
