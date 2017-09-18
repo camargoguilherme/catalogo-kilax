@@ -1,0 +1,24 @@
+*  {
+    margin:0;
+    padding:0;
+}
+
+html, body {height:100%;}
+
+.geral {
+    min-height:100%;
+    position:relative;
+
+}
+
+.footer {
+    align-items:center;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+.content {overflow:hidden;}
+.aside {width:200px;}
+.fleft {float:left;}
+.fright {float:right;}

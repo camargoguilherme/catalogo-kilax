@@ -4,19 +4,23 @@
 
 @section('conteudo')
     <div class="container">
+
         <div class="row">
             <div class="col s10 m10 l10" >
                 <div class="scrollspy section">
                     <div class="carousel carousel-slider initialized">
                         <div class="carousel carousel-slider">
-                            <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
-                            <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
-                            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
-                            <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+
+                            @foreach($imagems as $imagem)
+                                {{ dd($imagem) }}
+                                <a class="carousel-item" href=""><img src="{{asset($imagem->imagem)}}"></a>
+                            @endforeach
                         </div>
+
                     </div>
                 </div>
             </div>
+
             <div class="col s8 m2 l10">
                 <h4>Descrição</h4>
                 <p class="caption">{{ $produto->descricao }}</p>

@@ -42,7 +42,7 @@
 
 <div class="file-field input-field">
     <div class="btn blue">
-        <span>Imagem</span>
+        <span>Imagem de Capa</span>
         <input type="file" name="imagem">
     </div>
     <div class="file-path-wrapper">

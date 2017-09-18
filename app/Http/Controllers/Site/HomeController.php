@@ -16,6 +16,7 @@ class HomeController extends Controller
     }
     public function produto($id){
         $produto = Produto::find($id);
-        return view('detalhes.index', compact('produto'));
+        $imagems = Imagem::where('id_produto', $id);
+        return view('detalhes.index', compact('produto'), compact('imagems'));
     }
 }

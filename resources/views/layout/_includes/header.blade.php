@@ -18,13 +18,26 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 Materialize.updateTextFields();
+
                 $(".button-collapse").sideNav();
-                $('.carousel.carousel-slider').carousel({fullWidth: true});
-            })
+                $('.carousel.carousel-slider').carousel({dist:-100, shift: 0,
+                    fullWidth: false, indicator: false});
+                $('.modal').modal({
+                        dismissible: true, // Modal can be dismissed by clicking outside of the modal
+                        opacity: .5, // Opacity of modal background
+                        inDuration: 300, // Transition in duration
+                        outDuration: 200, // Transition out duration
+                        startingTop: '4%', // Starting top style attribute
+                        endingTop: '10%', // Ending top style attribute
+                    }
+                );
+            });
+
         </script>
     </head>
     <body>
-        <header>
+    <div class="geral">
+        <div class="geral">
             <nav>
                 <div class="nav-wrapper green" >
                     <a href="#!" class="brand-logo">Kilax Japan</a>
@@ -55,4 +68,4 @@
                     </ul>
                 </div>
             </nav>
-        </header>
+        </div>

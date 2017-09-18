@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Imagem;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Imagem\ImagemController;
 use App\Http\Controllers\Controller;
+use App\Imagem;
 use App\Produto;
+use Illuminate\Http\Request;
 
-// Constantes
-define('TAMANHO_MAXIMO', (5 * 1024 * 1024));
 
 class ProdutoController extends Controller
 {
     public function index(){
 
-        $registros = Produto::all();
-        return view ('admin.produtos.index', compact('registros'));
+        $registros = Produto::orderBy('id')->get();
+        $imagems = ImagemController::find();
+
+        return view ('admin.produtos.index', compact('registros'), compact('imagems'));
     }
 
     public function adicionar(){
@@ -33,48 +34,32 @@ class ProdutoController extends Controller
                 $dados['publicado'] = 'nao';
             }
 
-            if ($req->hasFile('imagem')){
-                $imagem = $req->file('imagem');
-                $num = rand(1, 999999);
-                $dir = "img/produtos";
-                $ex = $imagem->guessClientExtension();
-                $nomeImagem = "imagem_".$num.".".$ex;
-                $imagem->move($dir, $nomeImagem);
-                $foto['descricao'] = "imagem_".$num.".".$ex;
-                $foto['imagem'] = $dir . "/" . $nomeImagem;
-                $foto['capa'] = 'sim';
-            }
-
-
             Produto::create($dados);
-            $produto = Produto::where('codbarra', '=', $dados['codbarra'])->first();
-            $foto['id_produto'] = $produto['id'];
-            Imagem::create($foto);
 
+            if (isset($dados['imagem'])) {
+                if($req->hasFile('imagem')){
+                    ImagemController::adicionar($req);
+                }
+            }
 
         }
         return redirect()->route('admin.produtos');
     }
 
-    public function atualizar(Request $req, $id){
+    public function atualizar(Request $req, $id)
+    {
 
         $dados = $req->all();
 
-        if (isset($dados['publicado'])){
+        if (isset($dados['publicado'])) {
             $dados['publicado'] = 'sim';
-        }else{
+        } else {
             $dados['publicado'] = 'nao';
         }
-
-
-        if ($req->hasFile('imagem')){
-            $imagem = $req->file('imagem');
-            $num = rand(1, 999999);
-            $dir = "img/produtos";
-            $ex = $imagem->guessClientExtension();
-            $nomeImagem = "imagem_".$num.".".$ex;
-            $imagem->move($dir, $nomeImagem);
-            $dados['imagem'] = $dir . "/" . $nomeImagem;
+        if (isset($dados['imagem'])) {
+            if($req->hasFile('imagem')){
+                ImagemController::editar($req, $id);
+            }
         }
         Produto::find($id)->update($dados);
         return redirect()->route('admin.produtos');
@@ -88,6 +73,8 @@ class ProdutoController extends Controller
     }
 
     public function deletar($id){
+
+        ImagemController::deletarAll($id);
         Produto::find($id)->delete();
         return redirect()->route('admin.produtos');
     }
