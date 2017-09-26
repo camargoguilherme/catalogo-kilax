@@ -43,12 +43,13 @@
 <div class="file-field input-field">
     <div class="btn blue">
         <span>Imagem de Capa</span>
-        <input type="file" name="imagem">
+        <input type="file" name="imagem" accept="image/*">
     </div>
     <div class="file-path-wrapper">
         <input class="file-path validate" type="text">
     </div>
 </div>
+
 
 @if(isset($registro->imagem))
 <div class="input-field">

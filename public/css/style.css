@@ -5,10 +5,16 @@
 
 html, body {height:100%;}
 
+.carousel {
+    align-content: center;
+}
+.titulo {
+    color: green;
+    font-size: 20px;
+}
 .geral {
     min-height:100%;
     position:relative;
-
 }
 
 .footer {
@@ -17,8 +23,3 @@ html, body {height:100%;}
     bottom:0;
     width:100%;
 }
-
-.content {overflow:hidden;}
-.aside {width:200px;}
-.fleft {float:left;}
-.fright {float:right;}

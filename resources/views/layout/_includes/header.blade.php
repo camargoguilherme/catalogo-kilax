@@ -10,30 +10,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                Materialize.updateTextFields();
 
-                $(".button-collapse").sideNav();
-                $('.carousel.carousel-slider').carousel({dist:-100, shift: 0,
-                    fullWidth: false, indicator: false});
-                $('.modal').modal({
-                        dismissible: true, // Modal can be dismissed by clicking outside of the modal
-                        opacity: .5, // Opacity of modal background
-                        inDuration: 300, // Transition in duration
-                        outDuration: 200, // Transition out duration
-                        startingTop: '4%', // Starting top style attribute
-                        endingTop: '10%', // Ending top style attribute
-                    }
-                );
-            });
-
-        </script>
     </head>
     <body>
     <div class="geral">

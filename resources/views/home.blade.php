@@ -8,14 +8,14 @@
         <div class="row">
             @foreach($produtos as $produto)
                 @if($produto->publicado == 'sim')
-                    <div class="col s6 m2">
+                    <div class="col s12 m3">
 
                         <div class="card">
                             <div class="card-image">
                                 @foreach($imagems as $imagem)
 
                                     @if($imagem->id_produto == $produto->id && $imagem->capa == 'sim')
-                                        <img height="100" src="{{asset($imagem->imagem)}}" alt="{{ $produto->descricao }}">
+                                        <img height="140" src="{{asset($imagem->imagem)}}" alt="{{ $produto->descricao }}">
                                     @endif
                                 @endforeach
 

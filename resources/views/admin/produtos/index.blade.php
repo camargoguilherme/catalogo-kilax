@@ -5,6 +5,7 @@
 @section('conteudo')
     <div class="container">
         <h3 class="center">Lista de Produtos</h3>
+
         <div class="row">
             <table>
                 <thead>
