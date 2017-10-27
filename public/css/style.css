@@ -1,25 +1,40 @@
 *  {
-    margin:0;
-    padding:0;
+    margin: 0%;
+    padding: 0%;
 }
 
-html, body {height:100%;}
+html, body {
+    height:100%;
+}
+
+.brand-logo {
+    margin-left: 2%;
+}
 
 .carousel {
     align-content: center;
 }
-.titulo {
+
+.title {
     color: green;
     font-size: 20px;
 }
+
 .geral {
     min-height:100%;
     position:relative;
 }
 
 .footer {
-    align-items:center;
     position:absolute;
     bottom:0;
-    width:100%;
+    align-content: center;
+}
+
+.conteudo {
+    padding-bottom: 30px;
+}
+
+#descricao{
+    background: mediumorchid;
 }

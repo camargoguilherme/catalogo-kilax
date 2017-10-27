@@ -3,9 +3,9 @@
 @section('titulo', $produto->descricao)
 
 @section('conteudo')
-    <div class="container">
+    <div class="container" >
         <br>
-        <div class="row">
+        <div class="row" id="">
             <div class="" >
                 <div class="carousel carousel-slider center">
 
@@ -14,8 +14,9 @@
                     @endforeach
                 </div>
             </div>
-
-            <div class="col s8">
+        </div>
+        <div class="">
+            <div class="col s12 center-block">
                 <div class="titulo">Descrição</div>
                 <p class="caption">{{ $produto->descricao }}</p>
                 <div class="titulo">Código de Barra</div>

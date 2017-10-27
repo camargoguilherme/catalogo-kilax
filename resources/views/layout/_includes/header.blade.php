@@ -16,38 +16,59 @@
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
 
+        <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                Materialize.updateTextFields();
+
+                $(".button-collapse").sideNav();
+                $('.carousel.carousel-slider').carousel({fullWidth: true});
+                $('.modal').modal({
+                        dismissible: true, // Modal can be dismissed by clicking outside of the modal
+                        opacity: .5, // Opacity of modal background
+                        inDuration: 300, // Transition in duration
+                        outDuration: 200, // Transition out duration
+                        startingTop: '4%', // Starting top style attribute
+                        endingTop: '10%', // Ending top style attribute
+                    }
+                );
+            });
+        </script>
+
     </head>
     <body>
-    <div class="geral">
-        <div class="geral">
-            <nav>
-                <div class="nav-wrapper green" >
-                    <a href="#!" class="brand-logo">Kilax Japan</a>
-                    <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="/">Home</a></li>
+        <header class="container" id="geral">
+            <div class="dropdown">
+                <nav>
+                    <div class="nav-wrapper green" >
+                        <a href="#!" class="brand-logo">Kilax Japan</a>
+                        <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="/">Home</a></li>
 
-                        @if(Auth::guest())
-                            <li><a href="{{ route('login.index') }}">Login</a></li>
-                        @else
-                            <li><a href="{{route('admin.produtos')}}">Produtos</a></li>
-                            <li><a href="#">{{Auth::user()->name}}</a></li>
-                            <li><a href="{{route('site.login.sair')}}">Sair</a></li>
-                        @endif
+                            @if(Auth::guest())
+                                <li><a href="{{ route('login.index') }}">Login</a></li>
+                            @else
+                                <li><a href="{{route('admin.produtos')}}">Produtos</a></li>
+                                <li><a href="#">{{Auth::user()->name}}</a></li>
+                                <li><a href="{{route('site.login.sair')}}">Sair</a></li>
+                            @endif
 
 
-                    </ul>
-                    <ul class="side-nav" id="mobile">
-                        <li><a href="/">Home</a></li>
+                        </ul>
+                        <ul class="side-nav" id="mobile">
+                            <li><a href="/">Home</a></li>
 
-                        @if(Auth::guest())
-                            <li><a href="{{ route('login.index') }}">Login</a></li>
-                        @else
-                            <li><a href="{{route('admin.produtos')}}">Produtos</a></li>
-                            <li><a href="#">{{Auth::user()->name}}</a></li>
-                            <li><a href="{{route('site.login.sair')}}">Sair</a></li>
-                        @endif
-                    </ul>
-                </div>
-            </nav>
-        </div>
+                            @if(Auth::guest())
+                                <li><a href="{{ route('login.index') }}">Login</a></li>
+                            @else
+                                <li><a href="{{route('admin.produtos')}}">Produtos</a></li>
+                                <li><a href="#">{{Auth::user()->name}}</a></li>
+                                <li><a href="{{route('site.login.sair')}}">Sair</a></li>
+                            @endif
+                        </ul>
+                    </div>
+                </nav>
+            </div>
