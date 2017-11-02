@@ -4,9 +4,9 @@
 
 @section('conteudo')
     <div class="container">
-        <h3 class="center">Editando {{ $registro->descricao }}</h3>
+        <h3 class="center">Editando {{ $produto->descricao }}</h3>
         <div class="row">
-            <form class="" action="{{ route('admin.produtos.atualizar', $registro->id) }}" method="post" enctype="multipart/form-data">
+            <form class="" action="{{ route('admin.produtos.atualizar', $produto->codbarra) }}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="put">
 

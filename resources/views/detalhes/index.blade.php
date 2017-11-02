@@ -8,10 +8,7 @@
         <div class="row" id="">
             <div class="" >
                 <div class="carousel carousel-slider center">
-
-                    @foreach($imagems as $imagem)
-                                <a class="carousel-item" href=""><img src="{{asset($imagem->imagem)}}"></a>
-                    @endforeach
+                    <a class="carousel-item" href=""><img src=""></a>
                 </div>
             </div>
         </div>

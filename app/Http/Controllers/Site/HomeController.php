@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Imagem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Produto;
+use App\JsonKilaxJapan;
+use Illuminate\Support\Collection;
+use Kreait\Firebase\Factory;
+use Kreait\Firebase\ServiceAccount;
 
 class HomeController extends Controller
 {
     public function index(){
-        $produtos = Produto::all();
-        $imagems = Imagem::all();
-        return view('home', compact('produtos'), compact('imagems'));
+        $produto = new Produto();
+        $produtos = $produto->getAllProduct();
+
+        return view('home', compact('produtos'));
     }
-    public function produto($id){
-        $produto = Produto::find($id);
-        $imagems = Imagem::where('id_produto', $id)->get();
-        return view('detalhes.index', compact('produto'), compact('imagems'));
+    public function produto($codbarra){
+        $produt = new Produto();
+        $produto = $produt->getProductById($codbarra);
+
+        return view('detalhes.index', compact('produto'));
     }
 }

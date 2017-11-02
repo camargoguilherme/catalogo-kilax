@@ -1,6 +1,11 @@
+
+
+
+        <footer>
             <div class="footer">
-                <small>Copyright© Kilax Japan <a href="https://www.facebook.com/kilaxjapan/">Facebook Kilax Japan</a> - <a href="https://www.instagram.com/kilax.japan/">Instagram Kilax Japan</a></small>
+                <small>© Kilax Japan 2018 <a href="https://www.facebook.com/kilaxjapan/">Facebook Kilax Japan</a> - <a href="https://www.instagram.com/kilax.japan/">Instagram Kilax Japan</a></small>
             </div>
-        </header>
+        </footer>
+        </div>
     </body>
 </html>

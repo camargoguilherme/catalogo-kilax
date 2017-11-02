@@ -19,14 +19,8 @@ Route::get('/login', ['as'=>'login.index', 'uses'=>'Site\LoginController@index']
 Route::get('/login/sair', ['as'=>'site.login.sair', 'uses'=>'Site\LoginController@sair']);
 Route::post('/login/entrar', ['as'=>'site.login.entrar', 'uses'=>'Site\LoginController@entrar']);
 
-
-//Rotas para Pagina de Contato ---- Utilizada no começo do curso para testes
-Route::get('/contato/{id?}', ['uses'=>'ContatoController@index']);
-Route::post('/contato', ['uses'=>'ContatoController@criar']);
-Route::put('/contato', ['uses'=>'ContatoController@editar']);
-
 //Rotas para acesso a Produto
-Route::get('/detalhes/{id?}', ['as'=>'detalhes.produto', 'uses'=>'Site\HomeController@produto']);
+Route::get('/detalhes/{id}', ['as'=>'detalhes.produto', 'uses'=>'Site\HomeController@produto']);
 
 //Protege rotas contra acessos nao autorizados
 Route::group(['middleware'=>'auth'], function(){

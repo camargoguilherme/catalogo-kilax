@@ -1,42 +1,42 @@
 <div class="input-field">
-    <input type="text" name="descricao" value="{{ isset($registro->descricao) ? $registro->descricao : '' }}">
+    <input type="text" name="descricao" value="{{ isset($produto->descricao) ? $produto->descricao : '' }}">
     <label>Descrição</label>
 </div>
 
 <div class="input-field">
-    <input type="text" name="codbarra" value="{{ isset($registro->codbarra) ? $registro->codbarra : '' }}">
+    <input type="text" name="codbarra" value="{{ isset($produto->codbarra) ? $produto->codbarra : '' }}">
     <label>Codigo de Barras</label>
 </div>
 
 <div class="input-field">
-    <input type="text" name="material" value="{{ isset($registro->material) ? $registro->material : '' }}">
+    <input type="text" name="material" value="{{ isset($produto->material) ? $produto->material : '' }}">
     <label>Material</label>
 </div>
 
 <div class="input-field">
-    <input type="text" name="medidas" value="{{ isset($registro->medidas) ? $registro->medidas : '' }}">
+    <input type="text" name="medidas" value="{{ isset($produto->medidas) ? $produto->medidas : '' }}">
     <label>Medidas</label>
 </div>
 
 <div class="input-field">
-    <input type="text" name="origem" value="{{ isset($registro->origem) ? $registro->origem : '' }}">
+    <input type="text" name="origem" value="{{ isset($produto->origem) ? $produto->origem : '' }}">
     <label>Origem</label>
 </div>
 
 <div class="input-field">
-    <input type="text" name="peso" value="{{ isset($registro->peso) ? $registro->peso : '' }}" >
+    <input type="text" name="peso" value="{{ isset($produto->peso) ? $produto->peso : '' }}" >
     <label>Peso</label>
 </div>
 
 
 <div class="input-field">
-    <textarea class="materialize-textarea" name="precaucao" value="{{ isset($registro->precaucao) ? $registro->precaucao : '' }}" ></textarea>
+    <textarea class="materialize-textarea" name="precaucao" value="{{ isset($produto->precaucao) ? $produto->precaucao : '' }}" ></textarea>
     <label for="precaucao">Precaucões</label>
 </div>
 
 
 <div class="input-field">
-    <input type="text" name="valor" value="{{ isset($registro->valor) ? $registro->valor : '' }}" >
+    <input type="text" name="valor" value="{{ isset($produto->valor) ? $produto->valor : '' }}" >
     <label>Valor</label>
 </div>
 
@@ -51,15 +51,15 @@
 </div>
 
 
-@if(isset($registro->imagem))
+@if(isset($produto->imagem))
 <div class="input-field">
-    <img width="120" src="{{ asset($registro->imagem)}}" alt="{{ $registro->descricao }}"/>
+    <img width="120" src="{{ asset($produto->imagem)}}" alt="{{ $produto->descricao }}"/>
 </div>
 @endif
 
 <div class="">
     <p>
-        <input type="checkbox" id="publicar" name="publicado" {{ isset($registro->publicado) &&  $registro->publicado == 'sim' ? 'checked' : ''}} value="true">
+        <input type="checkbox" id="publicar" name="publicado" {{ isset($produto->publicado) &&  $produto->publicado == 'sim' ? 'checked' : ''}} value="true">
         <label for="publicar">Publicar?</label>
     </p>
     <br><br>

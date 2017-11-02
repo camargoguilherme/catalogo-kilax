@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "kilax-japan",
+  "private_key_id": "9817d819ebb8f6602764f716c421953c4eae092d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDAQIyUNAAeOu8n\nMoIlXASXdv4KYPI0Ku7rzY5IxV5nV5Qh7I08neU50MNX5FmCO2d5EwbhiOFrkxPE\nyBRQc4Dxql6A1h9PAjG9zXgIwEX68D6oNS4fjLfgeNOlX58DBuZpBkw5NVRpxMOr\nGJxdzUo2igk4gAebPJ6h7ejzCeulusc2cuon4vi5KRPKZx8Q+xH0d3TCb+aq0XIG\ngyzdMWWjqyRM2ds5A7Bm7PRnjrGGLTEWetb53U8tZYqu8/ns22/xvuIaXy60b8xv\n3VLKkYCvu31N9jwq/arsTDoFNAbmar4nhxYIU8udGx+BdVmOL0FUf/VtnHkslpLt\nLW5IYC6VAgMBAAECggEAA++OW95bU5hwmu8oG5cFqmAk6pYk1I09ykAGtgCsYms4\nPMrjR/wSMZvPfqDNyve9B40sf+OAfJD3P6O6SWdZRW6adALDg1I6gyCOC4fRfEX8\n0mQRp1MHKfuZ7EcdMepV6eKCHvheMQghMAMsov2ik6PsdRFR6+CoKA0pzrKY9hHo\nD3VBT65uPgNR7Es0XjCVBvaKyMVhnbP1YFKSuQzBl1NO4/6fg18ASug+xbHLU853\nrThLCOVgdqcBwoIyt26/8zNkxSMrZqNcLiecjtr5UYZi4IAZIGqf9FONeF5eWn2L\nCmYeaa1jUKRdErgqKytyGcr2LIyDldKOl3bV4J5eZQKBgQDjMeNWgJM0mMmQHTb7\n/veADddLkR8ZRoS1V3FVDcQd7i0uRP1BkAfVBFpa/nChqgrLdUlaZEml72HIqRX9\naClV0uFZgXp/0LCE0dFQBtOflVpb3b6/Vs7GAsEvEndANFuG9nzJ1ee9KD3uup/5\nocKZWPVXOb7m/o03Iill0GJ/owKBgQDYoIR9iDIUDcHrbBktbQnjhqsFg/efErcg\n/rWsoexc330oF3k4SSn4Jp6+sXPbhxLJKeF9YAIyfaeVNkbS7d5sbn5jzBrVV5zn\nzCKEbLIUZg8iSWyKJpiH3wP9anfSCy+twfW58z0/G084dO6E4FmWYf5A7XQXrkuu\nN8ITYqMcZwKBgQC8WrbMF0pzV5v7w4y7PHV6j38HYifzL3iEUxtdVU1bNwP0ETQZ\nb8xeeP5j5AACt1O9u931d6FrVVuvHSdi8EEcqvky2FpzrtM5Oi4a953o9sxzzxH9\n1X0VwmDgoqGE9CNRb/ai6pj2RG+cBNLuBYKs2YiFKRWwsibnJ4ZEp4+RmwKBgQCN\nI1APJcxS6n+87godYZx+xD/q8QdFegEcmzcsybbg769wjpKpDGouxqLI5X7xubiQ\nnhvO/t2PnfSwr9NHHDm9deQdC180Psf48jRPCS6hQbl8glAYVnssky3bTyHQFP+0\netmplIQD+LwNsYmxwyY7Z48rKEpqH2IpmSR2Ut6o4wKBgHL7+jD7e8esnT4Wcmhx\njrMKoBAJyZFjJ2FqPRjUSCiP6slcLYb2uAzuozXhb7MJK3Xih+FRcHzJftn9Urha\nvh6KnSK4FGm6BVrZXErn/oUHfw+BUd6ZwelB3BTA0YMfUdIj8wMMZ63MxJBYTjra\nE2AAGG1yUQ2bEM0CfJ/6d20V\n-----END PRIVATE KEY-----\n",
+  "client_email": "kilax-japan@appspot.gserviceaccount.com",
+  "client_id": "108236863159009280083",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/kilax-japan%40appspot.gserviceaccount.com"
+}

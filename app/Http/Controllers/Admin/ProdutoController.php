@@ -4,80 +4,59 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Imagem\ImagemController;
 use App\Http\Controllers\Controller;
-use App\Imagem;
+use App\JsonKilaxJapan;
 use App\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use Kreait\Firebase\Factory;
+use Kreait\Firebase\ServiceAccount;
+
 
 
 class ProdutoController extends Controller
 {
-    public function index(){
 
-        $registros = Produto::orderBy('id')->get();
-        $imagems = ImagemController::find();
 
-        return view ('admin.produtos.index', compact('registros'), compact('imagems'));
+    public function index()
+    {
+        $produto = new Produto();
+        $produtos = $produto->getAllProduct();
+
+        return view ('admin.produtos.index', compact('produtos'));
     }
 
     public function adicionar(){
-
         return view('admin.produtos.adicionar');
     }
 
     public function salvar(Request $req){
-        $dados = $req->all();
+        $produto = new Produto();
+        $produto->addProdutc($req->all());
 
-        if($dados['descricao'] != null) {
-            if (isset($dados['publicado'])) {
-                $dados['publicado'] = 'sim';
-            } else {
-                $dados['publicado'] = 'nao';
-            }
-
-            Produto::create($dados);
-
-            if (isset($dados['imagem'])) {
-                if($req->hasFile('imagem')){
-                    ImagemController::adicionar($req);
-                }
-            }
-
-        }
         return redirect()->route('admin.produtos');
     }
 
-    public function atualizar(Request $req, $id)
+    public function atualizar(Request $req, $codbarra)
     {
+        $produto = new Produto();
+        $produto->updateProductById($req->all(), $codbarra);
 
-        $dados = $req->all();
-
-        if (isset($dados['publicado'])) {
-            $dados['publicado'] = 'sim';
-        } else {
-            $dados['publicado'] = 'nao';
-        }
-        if (isset($dados['imagem'])) {
-            if($req->hasFile('imagem')){
-                ImagemController::editar($req, $id);
-            }
-        }
-        Produto::find($id)->update($dados);
         return redirect()->route('admin.produtos');
     }
 
-    public function editar($id){
+    public function editar($codbarra){
 
-        $registro = Produto::find($id);
+        $produt = new Produto();
+        $produto = $produt->getProductById($codbarra);
 
-        return view ('admin.produtos.editar', compact('registro'));
+        return view ('admin.produtos.editar', compact('produto'));
     }
 
-    public function deletar($id){
+    public function deletar($codbarra){
+        $produto = new Produto();
+        $produto->removeProductById($codbarra);
 
-        ImagemController::deletarAll($id);
-        Produto::find($id)->delete();
         return redirect()->route('admin.produtos');
     }
-
 
 }
