@@ -12,7 +12,7 @@ use Google\Cloud\Storage\StorageClient;
 class Produto extends Model
 {
     protected $attributes = ['descricao'=>'', 'codbarra'=>'', 'material'=>'', 'medidas'=>'',
-                            'origem'=>'', 'peso'=>'', 'precaucao'=>'', 'valor'=>'', 'publicado'=>''];
+                            'origem'=>'', 'peso'=>'', 'precaucoes'=>'', 'valor'=>'', 'publicado'=>''];
 
     public function __construct()
     {
@@ -67,11 +67,14 @@ class Produto extends Model
 
     public function updateProductById($array, $id){
         $firebase = $this->fireBaseConnected();
+        $produto = new Produto();
+        foreach ($array as $key => $value)
+            $produto[$key] = $value;
 
         $newPostKey = $firebase->getDatabase()->getReference('/produtos')->getChild($id)->getKey();
 
         $update = [
-            'produtos/'.$newPostKey=>$array
+            'produtos/'.$newPostKey=>$produto
         ];
 
         $firebase->getDatabase()->getReference()->update($update);

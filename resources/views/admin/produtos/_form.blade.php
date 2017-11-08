@@ -4,7 +4,7 @@
 </div>
 
 <div class="input-field">
-    <input type="text" name="codbarra" value="{{ isset($produto->codbarra) ? $produto->codbarra : '' }}">
+    <input type="text" name="codbarra" maxlength="13" value="{{ isset($produto->codbarra) ? $produto->codbarra : '' }}">
     <label>Codigo de Barras</label>
 </div>
 
@@ -30,8 +30,11 @@
 
 
 <div class="input-field">
-    <textarea class="materialize-textarea" name="precaucao" value="{{ isset($produto->precaucao) ? $produto->precaucao : '' }}" ></textarea>
-    <label for="precaucao">Precaucões</label>
+    <label for="precaucoes">Precaucões</label>
+    <textarea class="materialize-textarea" cols=60 id="precaucoes" rows="20" maxlength="500" wrap="hard" name="precaucoes" value="" >
+        {{  isset($produto->precaucoes) ? $produto->precaucoes : '' }}
+    </textarea>
+
 </div>
 
 

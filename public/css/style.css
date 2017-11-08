@@ -26,6 +26,7 @@ html, body {
 }
 
 .footer {
+    align-content: center;
     bottom: 0%;
 }
 

@@ -22,6 +22,7 @@ class ProdutoController extends Controller
         $produto = new Produto();
         $produtos = $produto->getAllProduct();
 
+
         return view ('admin.produtos.index', compact('produtos'));
     }
 
@@ -54,6 +55,7 @@ class ProdutoController extends Controller
 
     public function deletar($codbarra){
         $produto = new Produto();
+        dd($codbarra);
         $produto->removeProductById($codbarra);
 
         return redirect()->route('admin.produtos');

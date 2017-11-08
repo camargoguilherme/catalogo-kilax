@@ -14,7 +14,6 @@
                         <th>Descrição</th>
                         <th>Valor</th>
                         <th>Publicado</th>
-                        <th>Imagem</th>
                         <th>Ação</th>
                     </tr>
 
@@ -38,10 +37,11 @@
                                     <div class="modal-content">
                                         <h4>{{ $registro->descricao.' - '.$registro->material }}</h4>
                                         <p class="waves-effect waves-light">Deseja excluir?</p>
+                                        <div class="modal-footer">
+                                            <a href="{{route('admin.produtos.deletar', $registro->codbarra)}}" class="modal-action modal-close waves-effect waves-green btn-flat red">Deletar</a>
+                                        </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <a href="{{route('admin.produtos.deletar', $registro->codbarra)}}" class="modal-action modal-close waves-effect waves-green btn-flat red">Deletar</a>
-                                    </div>
+
                                 </div>
                             </td>
                         </tr>

@@ -9,7 +9,6 @@
             <form class="" action="{{ route('admin.produtos.atualizar', $produto->codbarra) }}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="put">
-
                 @include('admin.produtos._form')
 
                 <button class="waves-effect waves-light btn deep-orange">Atualizar</button>
